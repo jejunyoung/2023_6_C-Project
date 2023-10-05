@@ -1,6 +1,6 @@
 ﻿namespace _2023_6_C_Project
 {
-    partial class Main
+    partial class search
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(search));
+            pictureBox3 = new PictureBox();
             label1 = new Label();
             textBox1 = new TextBox();
             button1 = new Button();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             listView1 = new ListView();
             pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
             pictureBox6 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            listView2 = new ListView();
+            BookName = new ColumnHeader();
+            BookAuthor = new ColumnHeader();
+            BookPublisher = new ColumnHeader();
+            BookYear = new ColumnHeader();
+            BookNum = new ColumnHeader();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(146, -33);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(182, 163);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 16;
+            pictureBox3.TabStop = false;
             // 
             // label1
             // 
@@ -55,7 +70,7 @@
             label1.Location = new Point(286, 9);
             label1.Name = "label1";
             label1.Size = new Size(236, 84);
-            label1.TabIndex = 4;
+            label1.TabIndex = 17;
             label1.Text = "책장 모아";
             // 
             // textBox1
@@ -66,36 +81,16 @@
             textBox1.Location = new Point(58, 110);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(507, 46);
-            textBox1.TabIndex = 5;
+            textBox1.TabIndex = 18;
             // 
             // button1
             // 
             button1.Location = new Point(585, 110);
             button1.Name = "button1";
             button1.Size = new Size(105, 46);
-            button1.TabIndex = 6;
+            button1.TabIndex = 19;
             button1.Text = "검색";
             button1.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 149);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(734, 713);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(48, 635);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(100, 50);
-            pictureBox2.TabIndex = 8;
-            pictureBox2.TabStop = false;
             // 
             // listView1
             // 
@@ -104,7 +99,7 @@
             listView1.Location = new Point(0, 850);
             listView1.Name = "listView1";
             listView1.Size = new Size(734, 112);
-            listView1.TabIndex = 11;
+            listView1.TabIndex = 20;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
             // pictureBox4
@@ -115,7 +110,7 @@
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(174, 131);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 12;
+            pictureBox4.TabIndex = 21;
             pictureBox4.TabStop = false;
             // 
             // pictureBox5
@@ -126,9 +121,8 @@
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(146, 81);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 13;
+            pictureBox5.TabIndex = 22;
             pictureBox5.TabStop = false;
-            pictureBox5.Click += search_Click;
             // 
             // pictureBox6
             // 
@@ -138,58 +132,114 @@
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(149, 89);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 14;
+            pictureBox6.TabIndex = 23;
             pictureBox6.TabStop = false;
             // 
-            // pictureBox3
+            // listView2
             // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(146, -33);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(182, 163);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 15;
-            pictureBox3.TabStop = false;
+            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader1, BookName, BookAuthor, BookYear, BookNum, BookPublisher, columnHeader2 });
+            listView2.Location = new Point(50, 162);
+            listView2.Name = "listView2";
+            listView2.Size = new Size(650, 677);
+            listView2.TabIndex = 24;
+            listView2.UseCompatibleStateImageBehavior = false;
+            listView2.View = View.Details;
+            listView2.SelectedIndexChanged += listView2_SelectedIndexChanged;
             // 
-            // Main
+            // BookName
+            // 
+            BookName.Text = "책 이름";
+            BookName.TextAlign = HorizontalAlignment.Center;
+            BookName.Width = 130;
+            // 
+            // BookAuthor
+            // 
+            BookAuthor.Text = "저자";
+            BookAuthor.TextAlign = HorizontalAlignment.Center;
+            BookAuthor.Width = 130;
+            // 
+            // BookPublisher
+            // 
+            BookPublisher.Text = "발행자";
+            BookPublisher.TextAlign = HorizontalAlignment.Center;
+            BookPublisher.Width = 130;
+            // 
+            // BookYear
+            // 
+            BookYear.Text = "발행연도";
+            BookYear.TextAlign = HorizontalAlignment.Center;
+            BookYear.Width = 130;
+            // 
+            // BookNum
+            // 
+            BookNum.Text = "청구 기호";
+            BookNum.TextAlign = HorizontalAlignment.Center;
+            BookNum.Width = 130;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "";
+            columnHeader1.Width = 1;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "";
+            columnHeader2.TextAlign = HorizontalAlignment.Right;
+            columnHeader2.Width = 0;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackgroundImageLayout = ImageLayout.None;
+            flowLayoutPanel1.Location = new Point(58, 840);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(200, 10);
+            flowLayoutPanel1.TabIndex = 25;
+            // 
+            // search
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(734, 961);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
-            Controls.Add(pictureBox1);
+            Controls.Add(listView2);
+            Controls.Add(flowLayoutPanel1);
+            Controls.Add(pictureBox4);
             Controls.Add(pictureBox6);
             Controls.Add(pictureBox5);
-            Controls.Add(pictureBox4);
-            Controls.Add(pictureBox2);
-            Controls.Add(label1);
             Controls.Add(listView1);
+            Controls.Add(button1);
+            Controls.Add(textBox1);
+            Controls.Add(label1);
             Controls.Add(pictureBox3);
-            Name = "Main";
+            Name = "search";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Main";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            Text = "search";
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
+
+        private PictureBox pictureBox3;
         private Label label1;
         private TextBox textBox1;
         private Button button1;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
         private ListView listView1;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
-        private PictureBox pictureBox3;
+        private ListView listView2;
+        private ColumnHeader BookAuthor;
+        private ColumnHeader BookPublisher;
+        private ColumnHeader BookYear;
+        private ColumnHeader BookNum;
+        private ColumnHeader BookName;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
